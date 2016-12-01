@@ -1,9 +1,0 @@
-c:\users\santosh\documents\visual studio 2015\Projects\Assignment1\Assignment1\bin\Debug\Assignment1.exe.config
-c:\users\santosh\documents\visual studio 2015\Projects\Assignment1\Assignment1\bin\Debug\Assignment1.exe
-c:\users\santosh\documents\visual studio 2015\Projects\Assignment1\Assignment1\bin\Debug\Assignment1.pdb
-c:\users\santosh\documents\visual studio 2015\Projects\Assignment1\Assignment1\obj\Debug\Assignment1.csprojResolveAssemblyReference.cache
-c:\users\santosh\documents\visual studio 2015\Projects\Assignment1\Assignment1\obj\Debug\Assignment1.exe
-c:\users\santosh\documents\visual studio 2015\Projects\Assignment1\Assignment1\obj\Debug\Assignment1.pdb
-C:\GitHub\Git\Assignment1\Assignment1\bin\Debug\Assignment1.exe.config
-C:\GitHub\Git\Assignment1\Assignment1\obj\Debug\Assignment1.exe
-C:\GitHub\Git\Assignment1\Assignment1\obj\Debug\Assignment1.pdb

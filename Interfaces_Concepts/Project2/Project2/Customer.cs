@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment1
+namespace Project2
 {
     class Customer
     {
-       public string FirstName { get; set; }
-       public string LastName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
 
-       public Order[] order = new Order[3];
+        public Order[] order = new Order[3];
     }
 }

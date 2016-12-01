@@ -9,6 +9,7 @@ namespace ConsoleApplication7
 {
     class Program
     {
+        //Only One Region of code to be executed at a time to avoid compilation issues.
         static void Main(string[] args)
         {
             #region Where_Aggregate
