@@ -1,5 +1,5 @@
 # Git
-Simple project
+Simple projects
 
 Assignment1 == It's a simple project which demonstrates how classes, objects are used to store data and how data are retrieved.
 
