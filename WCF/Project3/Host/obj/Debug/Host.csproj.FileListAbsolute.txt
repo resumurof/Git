@@ -1,0 +1,11 @@
+C:\WCF\Project3\Host\bin\Debug\Host.exe.config
+C:\WCF\Project3\Host\bin\Debug\Host.exe
+C:\WCF\Project3\Host\bin\Debug\Host.pdb
+C:\WCF\Project3\Host\bin\Debug\EmployeeService.dll
+C:\WCF\Project3\Host\bin\Debug\EmployeeService.pdb
+C:\WCF\Project3\Host\obj\Debug\Host.csprojResolveAssemblyReference.cache
+C:\WCF\Project3\Host\obj\Debug\Host.exe
+C:\WCF\Project3\Host\obj\Debug\Host.pdb
+C:\GitHub\Git\WCF\Project3\Host\bin\Debug\Host.exe.config
+C:\GitHub\Git\WCF\Project3\Host\obj\Debug\Host.exe
+C:\GitHub\Git\WCF\Project3\Host\obj\Debug\Host.pdb

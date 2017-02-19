@@ -1,0 +1,5 @@
+C:\WCF\Project3\Client_WebApplication\Client_WebApplication\bin\Client_WebApplication.dll
+C:\WCF\Project3\Client_WebApplication\Client_WebApplication\bin\Client_WebApplication.pdb
+C:\WCF\Project3\Client_WebApplication\Client_WebApplication\obj\Debug\Client_WebApplication.dll
+C:\WCF\Project3\Client_WebApplication\Client_WebApplication\obj\Debug\Client_WebApplication.pdb
+C:\WCF\Project3\Client_WebApplication\Client_WebApplication\obj\Debug\Client_WebApplication.csprojResolveAssemblyReference.cache
