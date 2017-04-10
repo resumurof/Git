@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <script type="text/javascript">
+        var Employee = function (name) {
+            this.name = name;
+        }
+
+        // getName() function is added to the base object (Employee)
+        Employee.prototype.getName = function () {
+            return this.name;
+        }
+
+        var e1 = new Employee("mark");
+        document.write(e1.getName());
+
+    </script>
+</body>
+</html>

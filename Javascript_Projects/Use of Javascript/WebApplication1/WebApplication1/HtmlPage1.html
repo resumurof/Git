@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+
+    <script type="text/javascript">
+        function datetime()
+        {
+            var result = new Date();
+            return result.getDate();
+        }
+
+        //function overriding.
+        var alert = function(msg)
+        {
+            return document.write(msg);
+        }
+
+        alert("hello");
+        document.write("<br/>")
+
+        //Constructor function
+        function Employee(firstname, lastname)
+        {
+            var _firstname = firstname;
+            var _lastname = lastname;
+
+            this.EmployeeFullname = function()
+            {
+                return _firstname + " " +_lastname;
+            }
+        }
+
+        var e1 = new Employee("Mark", "steve");
+        var e2 = new Employee("Gregory", "mark");
+
+        document.write(e1.EmployeeFullname());
+        document.write("<br/>")
+        document.write(e2.EmployeeFullname());
+
+    </script>
+</body>
+</html>

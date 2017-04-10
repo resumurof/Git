@@ -6,3 +6,5 @@ Assignment1 == It's a simple project which demonstrates how classes, objects are
 Interfaces_Concepts == This Projects demonstrates how Interfaces can be used in a project to achieve abstraction.
 
 LINQ == This project demonstartes complete concepts and code about LINQ used in C#
+
+Javascript_Projects == This project demonstartes important concepts on javascript
