@@ -1,0 +1,4 @@
+M:\Jquery\01\01\bin\01.dll
+M:\Jquery\01\01\bin\01.pdb
+M:\Jquery\01\01\obj\Debug\01.dll
+M:\Jquery\01\01\obj\Debug\01.pdb
