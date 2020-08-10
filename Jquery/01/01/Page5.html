@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('img[src="Images/helpfile.jpg"]').mouseenter(function () {
+                var elmentid = $("#" + getDivId(this));
+                //alert(elmentid);
+            $(elmentid).fadeIn(1000);
+            }).mouseleave(function () {
+                var elmentid = $("#" + getDivId(this));
+                $(elmentid).fadeOut(1000);
+            });
+
+            function getDivId(helpicon) {
+                var imgid = $(helpicon).attr('class');
+                //alert(imgid);
+               return imgid.replace('img', 'div');
+            };
+        });
+
+    </script>
+
+    <!--Binding Event handlers--> 
+    <script type="text/javascript">
+        $(document).ready(function () { 
+            $('#addnewitem').on('click', function () {
+                //alert("button clicked");
+                $('ul').append('<li>New Item Added</li>');
+
+                $('ul').on('click', 'li:even', function () {
+                    $(this).fadeOut(500);
+                });
+            });
+        });
+       </script>  
+        <!--Binding Event handlers--> 
+   <script type="text/javascript">
+       $(document).ready(function () {
+           $('#idcontextmenu').on("contextmenu", function (event) {
+               event.preventDefault();
+               $('#rightclickdisable').append("Mouse Right click on hyperlink is disabled <br/>");
+           });
+          
+       });
+
+   
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>FirstName : </td>
+            <td><input type="text" id="firstname"/></td>
+             <td><img src="Images/helpfile.jpg"  class="imgfirstname"/></td>  
+            <td>
+                <div id="divfirstname" class="helpimgfirstname" style="display:none">Fisrtname as shown in Passport</div>
+            </td>          
+        </tr>
+        <tr>
+            <td>LasttName :</td>
+            <td><input type="text" id="lastname"/></td>
+             <td><img src="Images/helpfile.jpg" class="imglastname"/></td>  
+            <td>
+                <div id="divlastname" class="helpimglaststname" style="display:none">Lastname as shown in Passport</div>
+            </td>           
+        </tr>
+        <tr>
+            <td>City :</td>
+            <td>
+                <select>
+                    <option value="Select" selected="selected" id="city" >Select</option> 
+                   <option value="U.S">U.S</option>
+                    <option value="UK">UK</option>
+                    <option value="France">France</option>
+                    <option value="Canada">Canada</option>
+                </select>
+            </td>
+            <td>
+                <img src="Images/helpfile.jpg" class="imgcity"/></td>
+            <td>
+                <div id="divcity" class="helpimgcity" style="display:none">City where you Live</div>
+            </td>
+        </tr>
+        <tr>
+            <td>Favorite Color :</td>
+            <td><input type="radio" id="red" name="color" value="red"/>
+            <label for="red">RED</label>
+            <input type="radio" id="blue" name="color" value="blue" />
+            <label for="blue">BLUE</label>
+            <input type="radio" id="saffron" name="color" value="saffron" />
+            <label for="saffron">SAFFRON</label></td>
+             <td><img src="Images/helpfile.jpg" class="imgfavoritecolor" /></td> 
+            <td>
+                <div id="divfavoritecolor" class="helpimgfavoritecolor" style="display:none">Favorite Color</div>
+            </td>           
+        </tr>
+        <tr>
+            <td>Contact Method :</td>
+            <td><input type="checkbox" id="Email" name="Email" value="Email" />
+            <label for="Email">Email</label>
+            <input type="checkbox" id="Phone" name="Phone" value="Phone" />
+            <label for="Phone">Phone</label>
+            <input type="checkbox" id="SocialMedia" name="SocialMedia" value="SocialMedia" />
+            <label for="saffron">Social Media</label></td>
+             <td><img src="Images/helpfile.jpg" class="imgcontactmethod"  /></td> 
+             <td>
+                <div id="divcontactmethod" class="helpimgcontactmethod" style="display:none">Contact Method</div>
+            </td>            
+        </tr>
+        <tr>
+            <td>Comments : </td>
+            <td>
+                <textarea id="comments"></textarea>
+                <td>
+                    <img src="Images/helpfile.jpg" /></td>
+            </td>
+        </tr>
+    </table>
+
+    <br />
+    <br />
+    <label>*****************Binding Event handlers on custom data*****************</label>
+     <br />
+    <input type="button" id="addnewitem" value="Add Item"/>
+    <ul>
+        <li>Item Added</li>
+        <li>Item Added</li>
+        <li>Item Added</li>
+    </ul>
+    <br />
+    <br />
+    <label>*****************Disabling Right Click*****************</label>
+    <br />
+    <a href="https://google.com" id="idcontextmenu">GOOGLE</a>
+    <div id="rightclickdisable"></div>
+</body>
+</html>

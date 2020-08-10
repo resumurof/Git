@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .wrappeddiv
+        {
+            background-color:gold;
+            font-weight:bold;
+            margin:5px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('div4').wrap('<div class="wrappeddiv"></div>');
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //$('div').wrapAll('<div class="wrappeddiv"></div>');
+        });
+    </script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#div4').unwrap();
+                //$('#eachresult').unwrap();
+            });
+    </script>
+
+    <!--$.each and $().each-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var jsonobject = {
+                'USA': 'Washington D.C.',
+                "India": "New Delhi",
+                "UK": "London",
+                "Australia": "Canberra"
+            };
+            var result = "";
+            var jsonresult = "";
+            var mapresult = "";
+            $('ul li').each(function (i, e) {
+             result +=   "Index = " + i + " Element = " + $(e).text() + '<br/>';
+            });
+            $('#eachresult').html(result);
+
+            $.each(jsonobject, function(key, element){
+                jsonresult += "key = " + key + " Element = "+ element + '<br/>';
+            });
+            $('#doteachresult').html(jsonresult);
+
+            //usage of map function
+            mapresult = $.map(jsonobject, function (key, element) {
+                return element;
+            }).join('|');
+
+            $('#mapresult').html(mapresult);
+        });
+    </script>
+
+</head>
+<body>
+    <div id="div1">
+        DIV1
+    </div>
+    <div id="div2">
+        DIV2
+    </div>
+    <div id="div3">
+        DIV3
+    </div>
+    <br />
+    <br />
+     <div id="div4">
+        DIV4
+    </div>
+    <div id="div5">
+        DIV5
+    </div>
+    <div id="div6">
+        DIV6
+    </div>
+
+    <br />
+    <br />
+    <ul>
+        <li>US</li>
+        <li>India</li>
+        <li>UK</li>
+        <li>Canada</li>
+        <li>Australia</li>
+    </ul>
+    <br />
+    <br />
+    <div id="eachresult"></div>
+    <br />
+    <br />
+    <div id="doteachresult"></div>
+        <br />
+    <br />
+    <div id="mapresult"></div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+        .myDivClass {
+            width: 150px;
+            padding: 5px;
+            font-size: 18px;
+            border: 1px solid black;
+            opacity: .4;
+            background-color: red;
+            color: white;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.fx.off = ($('#chkbox').is('checked'))
+
+            $('#myButton').on('click', function () {
+                $('#myDiv1').animate({
+                    'width': 500,
+                    'padding': 20,
+                    'font-size': 50,
+                    'border-width': 10,
+                    'opacity': 1
+                }, 1000).queue(function () {
+                    console.log("Queue length = " + $(this).queue('fx').length);
+                });;
+
+                $('#myDiv2').animate({
+                    'width': 500,
+                    'padding': 20,
+                    'font-size': 50,
+                    'border-width': 10,
+                    'opacity': 1
+                }, 1000);
+            });
+          
+     });
+        
+    </script>
+
+    <script src="Scripts/Script1.js" type="text/javascript"></script>
+   
+</head>
+<body>
+    <input type="button" id="myButton" value="Start Animation" />
+    
+    <input type="checkbox" id="chkbox" />Turn off animations
+    <br /><br />
+
+    <div id="myDiv1" class="myDivClass">
+         jQuery animations
+     </div>
+    <br />
+    <div id="myDiv2" class="myDivClass">
+        Pragim Tech
+    </div>
+
+    <br />
+    <br />
+     Password :
+    <input type="password" id="txtPassword" />
+    <input type="checkbox" id="cbShowPassword" />Show password
+
+</body>
+</html>

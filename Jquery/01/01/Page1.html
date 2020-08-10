@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--<script type="text/javascript" src="Scripts/jquery-3.5.1.js"></script>-->
+
+    <!--Referrenced locally-->
+    <!--<script src="Scripts/jquery-3.2.0.js"></script>-->
+
+    <!-- CDN Load -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        <!-- Fall back stratergy if CDN Fails-->
+        Window.jquery || document.write('<script src="Scripts/jquery-3.2.0.js"><\/script>');
+    </script>
+    
+        <title></title>
+   
+   <!-- //On load functionality -->
+    <script type="text/javascript">
+        $(window).on('load', function () {
+            $('#button1').click(function () {
+                $('#divid').html("Width = " + $('#imgid').width() + '<br/> ' + "Height =" + $('#imgid').height())
+                alert('load function');
+            });
+        });
+    </script>
+
+   <!-- //Ready functionality -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#divid').html("Width = " + $('#imgid').width() + '<br/> ' + "Height =" + $('#imgid').height())
+            alert('load function');
+
+        });
+    </script>
+        
+    <!-- //Usage of JQuery css functionality -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#button2').on("mouseover", function () {            
+                $(this).css({
+                    "background-color": "yellow",
+                    "font-weight": "bolder"
+                });
+                alert('mouseover function');
+            });
+        });
+    </script>
+
+     <!-- //Element Selector functionality -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#table1 tr:even').css('background-color', 'grey');
+            $('#table1 tr:odd').css('background-color', 'yellow');
+           
+            $('#table1 tr').each(function () {
+                alert( $(this).html());
+            });
+        
+        });
+
+    </script>
+
+     <!-- //Class Selector functionality -->    
+    <script type="text/javascript">
+        $(document).ready(function (){
+            $(".span1").css("border", "1px solid red");
+            $(".div1 .span1").css("border", "5px solid red");
+        });
+    </script>
+
+     <!-- //Attribute Selector functionality -->    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('title[value="span7"]').css("border", "5px solid black");
+           
+        });
+    </script>
+</head>
+<body>
+    <h1>"HELLO"</h1>
+    <button id="button1">Click Me</button><br /><br /><br />    
+    <button id="button2">Click Me</button>
+    <div id="divid">
+        <div></div>
+        <div></div>
+        </div>
+    <img id="imgid" src="Images/image.png"/>
+
+    <br /><br /><br />
+
+    <div>
+        <table border="1" id="table1">           
+             <tr> 
+            <th>NAME</th> 
+            <th>AGE</th> 
+            <th>BRANCH</th> 
+        </tr> 
+        <tr> 
+            <td>BITTU</td> 
+            <td>22</td> 
+            <td>CSE</td> 
+        </tr> 
+        <tr> 
+            <td>RAM</td> 
+            <td>21</td> 
+            <td>ECE</td> 
+        </tr>
+            <tr> 
+            <td>Tej</td> 
+            <td>23</td> 
+            <td>ECE</td> 
+        </tr> 
+            <tr> 
+            <td>SAM</td> 
+            <td>25</td> 
+            <td>ECE</td> 
+        </tr>  
+    </table> 
+  
+    </div>
+
+    <div>
+        <br />
+        <span class="span1">SPAN1</span><br />
+        <span class="span2">SPAN2</span><br />
+        <span class="span3">SPAN3</span><br />
+    </div>
+
+    <div>
+        <div class="div1"><span class="span1">SPAN1</span><br /></div>         
+        <span class="span2">SPAN2</span><br />
+        <span class="span3">SPAN3</span><br />
+    </div>
+
+    <div>
+        <span title ="span7" >SPAN7</span><br /></div>       
+   
+</body>
+</html>

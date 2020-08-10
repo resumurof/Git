@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--Input Selector-->
+    <script>
+        $(document).ready(function () {
+            $('input[type="text"]').each(function () {
+                alert($(this).val());
+            });
+        });
+    </script>
+
+    <!--Checked Selector-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#OnSubmit').click(function () {
+                var selected = [];
+                $('input[type="checkbox"]:checked').each(function () {
+                   selected.push($(this).val());
+                    
+                });
+                //var result = $('input[type="checkbox"]').val();
+
+                if (selected.length > 0) {
+                    $('#Slectionresult').html(selected.length + " Item is Checked" + '<br/><br/>' + selected);
+                }
+                else {
+                    $('#Slectionresult').html("Checkbox is not selected" );
+                }
+                
+            });
+        });
+    </script>   
+
+</head>
+<body>
+    First Name:<input type="text" value="John" />
+    <br />
+    <br />
+    Last Name:<input type="text" value="Johnny" />
+
+    <br />
+    <br />
+
+    Gender:
+    <div id="group1">
+    <input type="radio" value="Male" checked="checked" name="group1"/>Male
+    <input type="radio" value="Female" name="group1"/>Female
+    </div>
+    <br />
+    <br />
+
+    Skills: 
+    <input type="checkbox" value="Javascript" checked="checked" />Javascript  
+            <input type="checkbox" value="JQuery"/>JQuery  
+            <input type="checkbox" value="C#"/>C#
+    
+     <br />
+    <br />
+
+    Country:<select>
+        <option value="USA" selected="selected">USA</option>
+        <option value="Canada">Canada</option>
+        <option value="France">France</option>
+    </select>
+
+    <br />
+    <br />
+
+    Summary:<textarea>I am a Senior Dot Net Developer with 10 years experience</textarea>
+
+    <br />
+    <br />
+
+    <input type="submit" value="submit" id="OnSubmit"/>
+
+    <br />
+    <br />
+
+    <div id="Slectionresult"></div>
+    <br />
+    <br />
+
+
+</body>
+</html>

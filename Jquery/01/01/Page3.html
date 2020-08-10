@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <!--Selection based on name-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.Skills').click(function () {
+                getSelectedCheckBoxes('skills');
+            });
+
+            $('.Cities').click(function () {
+                getSelectedCheckBoxes('cities');
+            });
+        });
+
+        var getSelectedCheckBoxes = function (groupname) {
+
+            var selected = [];
+            $('input[name="' + groupname + '"]:checked').each(function () {
+                selected.push($(this).val());
+
+            });
+            //var result = $('input[type="checkbox"]').val();
+
+            if (selected.length > 0) {
+                $('#Divselection').html(selected.length + " Item is Checked" + '<br/><br/>' + selected);
+            }
+            else {
+                $('#Divselection').html("Checkbox is not selected");
+            }
+
+        }
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('input[type="checkbox"]:checked').click(function () {
+                getSelectedCheckBoxes();
+            });
+        });
+
+        function getSelectedCheckBoxes() {
+
+            var selected = [];
+            $('input[type="checkbox"]:checked').each(function () {
+                selected.push($('label[for="option-' + $(this).val() + '"]').text() + " - " + $(this).val() + '<br/><br/>');
+
+            });
+
+            $.each(selected, function () {
+                $('#Divcbselection').html(selected);
+            })
+        }
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#selectCountries option').click(function () {
+                var multipleselection = $('#selectCountries option:selected');
+                //alert(multipleselection.val());
+                var resultstring = "";
+                if (multipleselection.length > 0) {
+                    multipleselection.each(function () {
+                        resultstring += 'Text = ' + $(this).text()
+                        + ', ' + 'Value = ' + $(this).val() + '<br/><br/>';
+
+                    });
+                }
+                $('#comboselection').html(resultstring);
+            });
+        });
+    </script>
+
+    <!--Enabled and Disabled control Selection-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(':disabled').css('border', '3px solid red');
+            $(':enabled').css('border', '3px solid yellow');
+        });
+    </script>
+
+    <!--Functions chaining-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('li').css('color', 'blue').fadeOut('1000').fadeIn('1000');
+        });
+    </script>
+
+    <!--Json to String and String to Json-->
+    <script type="text/javascript">
+
+        var Jsonobject = [
+            {
+                "firstName": "Todd",
+                "lastName": "Grover",
+                "gender": "Male",
+                "salary": 50000
+            },
+            {
+                "firstName": "Sara",
+                "lastName": "Baker",
+                "gender": "Female",
+                "salary": 40000
+            }
+        ]
+
+        var stringifyobject = [{ "firstName": "Todd", "lastName": "Grover", "gender": "Male", "salary": 50000 }, { "firstName": "Sara", "lastName": "Baker", "gender": "Female", "salary": 40000 }];
+
+        $(document).ready(function () {
+            var result = JSON.stringify(Jsonobject);
+            $('#jsontostring').html(result);
+
+            var result = "";
+            $.each(stringifyobject, function (i, element) {
+                
+                result += "FirstName = " + element.firstName + '<br/>'
+                result += "LastName = " + element.lastName + '<br/>'
+                result += "Gender = " + element.gender + '<br/>'
+                result += "Salary = " + element.salary + '<br/><br/>'
+                $('#stringtojson').html(result);
+            });
+        });
+    </script>
+</head>
+<body>
+    Skills: 
+    <input type="checkbox" name="skills" value="C++ " />C++  
+            <input type="checkbox" name="skills" value="C" />C  
+            <input type="checkbox" name="skills" value="Python" />Python
+    <br />
+    <br />
+    Cities: 
+    <input type="checkbox" name="cities" value="France" checked="checked" />France
+            <input type="checkbox" name="cities" value="UK" />UK  
+            <input type="checkbox" name="cities" value="United States" />United States
+     <br />
+    <br />
+
+    <input type="button" class="Skills" value="GetSkills" />
+    <input type="button" class="Cities" value="GetCities" />
+
+    <div id="Divselection"></div>
+
+    <br />
+    <br />
+    <label>************Checkbox Text and Label Selection************</label>
+    <br />
+    <br />
+    Skills: 
+    <input type="checkbox" name="skills" value="C++ " />
+    <label for="option-CPP">CPP</label>
+    <input type="checkbox" name="skills" value="C" />
+    <label for="option-C">C</label>
+    <input type="checkbox" name="skills" value="Python" />
+    <label for="option-Python">Python</label>
+    <br />
+    <br />
+    Cities: 
+    <input type="checkbox" name="cities" value="France" checked="checked" />
+    <label for="option-France">France</label>
+    <input type="checkbox" name="cities" value="UK" />
+    <label for="option-UK">UK</label>
+    <input type="checkbox" name="cities" value="United States" />
+    <label for="option-UnitedStates">UnitedStates</label>
+    <br />
+    <br />
+    <div id="Divcbselection"></div>
+
+    <label>************Multiple Combo Selection************</label>
+    <br />
+    <br />
+    Multi-Selection Combo:
+    <select id="selectCountries" multiple="multiple">
+        <option value="US">UnitedStates</option>
+        <option value="UK">UnitedKingdom</option>
+        <option value="IN">India</option>
+        <option value="CA">Canada</option>
+        <option value="AU">Australia</option>
+    </select>
+    <br />
+    <br />
+    <div id="comboselection"></div>
+
+    <label>************Enabled and Disabled control Selection************</label>
+    <br />
+    <br />
+    FirstName:<input type="text" id="firstname" />
+    LastName:<input type="text" id="lastname" />
+
+    <br />
+    <br />
+
+    Comments:<td>
+        <textarea disabled="disabled"></textarea>
+        <input type="submit" value="submit" disabled="disabled" />
+
+        <br />
+        <br />
+
+        <label>************Method Chaining************</label>
+        <br />
+        <br />
+        <ul>
+            <li>India</li>
+            <li>United States</li>
+            <li>United Kingdom</li>
+            <li>Canada</li>
+            <li>France</li>
+        </ul>
+
+        <label>************Json to String and String to Json************</label>
+        <br />
+        <br />
+        <div id="jsontostring"></div>
+        <br />
+        <br />
+        <div id="stringtojson"></div>
+</body>
+</html>

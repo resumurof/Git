@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
+     <script type="text/javascript">  
+        
+         $(document).ready(function () {
+
+             //Passing data based on element selected.
+       /*     var textboxes = $('input[type="text"]');
+             textboxes.focusin(function () {
+                 //alert("Handler for .focus() called.");
+                 var helpidselector =  $(this).attr('id') + "HelpDiv";
+                 $('#' + helpidselector).load("Page10.html #" + helpidselector
+                     //$('#helpidselector').html = response;
+                 );
+                   
+             });
+
+             textboxes.focusout(function () {
+                 var helpidselector =  $(this).attr('id') + "HelpDiv";
+                 $('#' + helpidselector).html("");
+             }); */
+
+           
+             //Passing data as a JSON object
+             var textboxes = $('input[type="text"]');
+             textboxes.focus(function () {
+                 
+                 var helpidselector = $(this).attr('id');               
+                 //$('#' + helpidselector + "HelpDiv").load("GetHelpText.aspx", { HelpTextKey: helpidselector }, function(response){
+
+                 //    $('#helpidselector').html = response;
+                 //}
+
+                 //Ajax call
+                 $.ajax({
+                     url: "GetHelpText.aspx",
+                     method: "POST",
+                     data: { HelpTextKey: helpidselector },
+                     dataType:'xml',
+                     success:(function (response) {
+                         var jQueryXml = $(response);
+                         var textElement = jQueryXml.find("text");//  filter(":contains('innerHTML')");
+                         //alert(textElement.g);
+                         $('#' + helpidselector + "HelpDiv").html(response.documentElement.innerHTML);
+                     })
+                     
+             });
+
+
+                 //);
+
+             });
+
+             textboxes.focusout(function () {
+                 var helpidselector = $(this).attr('id') + "HelpDiv";
+                 $('#' + helpidselector).html("");
+             });
+         });
+     </script>
+</head>
+<body>
+<!--    <table>
+        <tr>
+            <td>First Name : </td>
+            <td>
+                <input type="text" id="firstName" /></td>
+            <td>
+                <div id="firstNameHelpDiv"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td>
+                <input id="lastName" type="text" /></td>
+            <td>
+                <div id="lastNameHelpDiv"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>
+                <input id="email" type="text" /></td>
+            <td>
+                <div id="emailHelpDiv"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Income</td>
+            <td>
+                <input id="income" type="text" /></td>
+            <td>
+                <div id="incomeHelpDiv"></div>
+            </td>
+        </tr>
+    </table>-->
+
+    <br />
+    <br />
+    <label>Retrieving HelpText from database</label>
+    <table>
+        <tr>
+            <td>First Name : </td>
+            <td>
+                <input type="text" id="firstName" /></td>
+            <td>
+                <div id="firstNameHelpDiv"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td>
+                <input id="lastName" type="text" /></td>
+            <td>
+                <div id="lastNameHelpDiv"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>
+                <input id="email" type="text" /></td>
+            <td>
+                <div id="emailHelpDiv"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Income</td>
+            <td>
+                <input id="income" type="text" /></td>
+            <td>
+                <div id="incomeHelpDiv"></div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
